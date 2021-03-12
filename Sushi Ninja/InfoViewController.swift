@@ -11,8 +11,7 @@ import UIKit
 class InfoViewController: UIViewController {
 
     
-    // some variables
-    
+    // local variables
     var startDate: String?
     var kickoffDate: String?
     var roadToReadyEnd: String?
@@ -22,9 +21,9 @@ class InfoViewController: UIViewController {
     var threePointReviewEnd: String?
     
     var epicJiraTicketNumber: String?
+    
     let week : TimeInterval = 7.0 * 24.0 * 3600.0
     
-
     // Date Formatting
     let dateFormatter = DateFormatter()
 
