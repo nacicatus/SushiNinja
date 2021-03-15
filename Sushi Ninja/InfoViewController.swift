@@ -19,7 +19,6 @@ class InfoViewController: UIViewController {
     var sprintStart: String?
     var requirementDocking: String?
     var threePointReviewEnd: String?
-    
     var epicJiraTicketNumber: String?
     
     let week : TimeInterval = 7.0 * 24.0 * 3600.0
@@ -34,38 +33,47 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
         
         dateFormatter.dateFormat = "d MMM, yyyy"
-        calculate()
-        infoTextBox.text = printInfo()
+        calculateDates()
+        let milestones = populateEventDictionary()
+        infoTextBox.text = printInfo(from: milestones)
         
     }
     
-    func printInfo() -> String {
-        
-        let aText = "Planning for Epic \(epicJiraTicketNumber!) started on \(startDate!).\n"
-        let bText = "CernerPM should document verbiage and UX Designer should export visuals as PDF before the feature will kickoff on \(kickoffDate!).\n\n"
-        let cText = "After that, EPAM PO should breakdown stories, write acceptance criteria and clarify questions with Cerner PM, UXD and Tech leads until \(roadToReadyEnd!).\nEPAM Dev team may optionally pre-groom the stories during this time.\n"
-        let dText = "By \(specDoneEnd!) the Acceptance Criteria should have been reviewed and the story moved to Incep Spec Done by Cerner PM.\n"
-        let eText = "Sprint will start on \(sprintStart!).\nEPAM Dev team should groom and plan the next Sprint before then and EPAM PO should start refining requirements in DNG and clarify any new questions before \(requirementDocking!).\n\n"
-        let fText = "Afer that, the DNG requirements should be reviewed by Cerner PM and Tech Leads, and EPAM Story Owner.\n PO should link requirements to Jira and Dev team should trace tests to requirements before the Sprint ends on \(threePointReviewEnd!)."
-        
-        let finalText = aText + bText + cText + dText + eText + fText
+    func printInfo(from event: Dictionary<String?, String>) -> String {
+        var finalText = ""
+        for item in event {
+            finalText.append(contentsOf: item.key! + "\n" + item.value + "\n\n")
+        }
         return finalText
     }
     
     
-    func calculate() {
-        let now = Date()
-        
-        startDate = dateFormatter.string(from: now)
-        kickoffDate = dateFormatter.string(from: now.addingTimeInterval(week))
-        roadToReadyEnd = dateFormatter.string(from: now.addingTimeInterval(week * 2.0))
-        specDoneEnd = dateFormatter.string(from: now.addingTimeInterval(week * 3.0))
-        sprintStart = dateFormatter.string(from: now.addingTimeInterval(week * 4.0))
-        requirementDocking = dateFormatter.string(from: now.addingTimeInterval(week * 5.0))
-        threePointReviewEnd = dateFormatter.string(from: now.addingTimeInterval(week * 6.0))
+    func calculateDates() {
+        let now = dateFormatter.date(from: startDate!)
+        kickoffDate = dateFormatter.string(from: now!.addingTimeInterval(week))
+        roadToReadyEnd = dateFormatter.string(from: now!.addingTimeInterval(week * 2.0))
+        specDoneEnd = dateFormatter.string(from: now!.addingTimeInterval(week * 3.0))
+        sprintStart = dateFormatter.string(from: now!.addingTimeInterval(week * 4.0))
+        requirementDocking = dateFormatter.string(from: now!.addingTimeInterval(week * 5.0))
+        threePointReviewEnd = dateFormatter.string(from: now!.addingTimeInterval(week * 6.0))
         
     }
 
+    func populateEventDictionary() -> Dictionary<String?, String> {
+        let eventDictionary = [
+            kickoffDate : "Cerner PM to document verbiage, UX Designer to export visuals as PDF",
+            roadToReadyEnd : "EPAM PO to breakdown stories, write Acceptance Criteria, clarify questions with PM, UXD, Tech Leads",
+            specDoneEnd : "Acceptance Criteria to be reviewed by PM, story moved to Incep Spec Done",
+            sprintStart : "EPAM Dev Team to Groom and Plan next Sprint",
+            requirementDocking : "EPAM PO to refine requirements in DNG",
+            threePointReviewEnd : "DNG requirements to be reviewed by PM, PO to link Jira, Dev Team to trace tests to requirements"
+        ]
+        
+        return eventDictionary
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

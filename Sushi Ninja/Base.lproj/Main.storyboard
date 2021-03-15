@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwL-gS-Lo1">
-                                <rect key="frame" x="128" y="312" width="119" height="43"/>
+                                <rect key="frame" x="128" y="562" width="119" height="43"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
                                 </accessibility>
@@ -34,13 +34,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZv-ra-GRm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZv-ra-GRm">
                                 <rect key="frame" x="16" y="90" width="343" height="67"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGg-aM-Z9K">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGg-aM-Z9K">
                                 <rect key="frame" x="16" y="203" width="343" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="IeJ-Nh-dIF"/>
@@ -49,18 +49,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7HC-ct-WZu">
+                                <rect key="frame" x="0.0" y="278" width="375" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <date key="date" timeIntervalSinceReferenceDate="637522031.83549404">
+                                    <!--2021-03-15 17:27:11 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="selectDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="8c8-rV-5s0"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7HC-ct-WZu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Ml-1g-U2X"/>
+                            <constraint firstItem="7HC-ct-WZu" firstAttribute="top" secondItem="bGg-aM-Z9K" secondAttribute="bottom" constant="8" id="3Ta-zq-WZo"/>
                             <constraint firstItem="QZv-ra-GRm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="6od-hS-3wh"/>
+                            <constraint firstItem="7HC-ct-WZu" firstAttribute="centerX" secondItem="bGg-aM-Z9K" secondAttribute="centerX" id="ADn-Hm-isw"/>
                             <constraint firstItem="bGg-aM-Z9K" firstAttribute="top" secondItem="04Q-6H-aWO" secondAttribute="bottom" constant="8" symbolic="YES" id="FAF-Hr-PBL"/>
                             <constraint firstItem="04Q-6H-aWO" firstAttribute="top" secondItem="QZv-ra-GRm" secondAttribute="bottom" constant="8" id="Q7b-OU-mXV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QZv-ra-GRm" secondAttribute="trailing" constant="16" id="WFf-fX-yI7"/>
                             <constraint firstItem="04Q-6H-aWO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="btY-yM-x5S"/>
                             <constraint firstItem="kwL-gS-Lo1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dSc-Da-fwx"/>
-                            <constraint firstItem="kwL-gS-Lo1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dUS-UB-QwU"/>
+                            <constraint firstItem="kwL-gS-Lo1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="250" id="dUS-UB-QwU"/>
                             <constraint firstItem="QZv-ra-GRm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fAf-RM-nax"/>
-                            <constraint firstItem="bGg-aM-Z9K" firstAttribute="trailing" secondItem="04Q-6H-aWO" secondAttribute="trailing" id="jqe-LF-725"/>
+                            <constraint firstItem="bGg-aM-Z9K" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="04Q-6H-aWO" secondAttribute="trailing" id="jqe-LF-725"/>
                             <constraint firstItem="04Q-6H-aWO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wi1-Tv-hqT"/>
                             <constraint firstItem="bGg-aM-Z9K" firstAttribute="leading" secondItem="04Q-6H-aWO" secondAttribute="leading" id="xCs-nM-i1b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="04Q-6H-aWO" secondAttribute="trailing" constant="16" id="xT9-8T-6zw"/>
@@ -72,6 +85,7 @@
                         <outlet property="greetingLabel" destination="QZv-ra-GRm" id="9Rp-c3-W4i"/>
                         <outlet property="instructionLabel" destination="bGg-aM-Z9K" id="pQr-zv-6Q4"/>
                         <outlet property="jiraTextField" destination="04Q-6H-aWO" id="TlT-Nv-8Ac"/>
+                        <outlet property="startDatePicker" destination="7HC-ct-WZu" id="W7v-cS-NeP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
