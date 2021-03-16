@@ -62,6 +62,8 @@ class InfoViewController: UIViewController {
     
     
     func populateEvents() -> String {
+        
+        var finalText = ""
         let eventDictionary = [
             
             "A. Jira Epic created by Cerner PM" : startDate!,
@@ -73,13 +75,19 @@ class InfoViewController: UIViewController {
             "G. DNG requirements to be reviewed by PM, PO to link Jira, Dev Team to trace tests to requirements" : threePointReviewEnd!
         ]
         
+        let dictionaryKeys = Array(eventDictionary.keys).sorted()
+        print(dictionaryKeys)
         
+//        for item in dictionaryKeys {
+////            finalText.append(eventDictionary.value(forKey: item)) + "\n" + item + "\n\n" )
+//            finalText.append(contentsOf: (eventDictionary.))
+////            finalText.append(event.value + "\n" + event.key + "\n\n")
+//        }
         
-        var finalText = ""
-        for event in eventDictionary {
-            finalText.append(event.value + "\n" + event.key + "\n\n")
-
-        }
+//        for event in eventDictionary {
+//            finalText.append(event.value + "\n" + event.key + "\n\n")
+//
+//        }
         return finalText
         
     }
