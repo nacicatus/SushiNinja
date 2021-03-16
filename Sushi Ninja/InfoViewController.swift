@@ -32,23 +32,13 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateFormatter.dateFormat = "MM-dd-yyyy"
+        dateFormatter.dateFormat = "MMM d, yyyy"
         calculateDates()
         let milestones = populateEvents()
         infoTextBox.text = milestones
         
     }
-    
-    //    func printInfo(from event: Dictionary<String, String>) -> String {
-    //        var finalText = ""
-    //        for item in event {
-    //            //finalText.append(contentsOf: item.key + "\n" + item.value + "\n\n")
-    //            finalText.append(item.key + "\n" + item.value + "\n\n")
-    //        }
-    //        return finalText
-    //    }
-    
-    
+
     func calculateDates() {
         let now = dateFormatter.date(from: startDate!)
         kickoffDate = dateFormatter.string(from: now!.addingTimeInterval(week))
@@ -57,13 +47,12 @@ class InfoViewController: UIViewController {
         sprintStart = dateFormatter.string(from: now!.addingTimeInterval(week * 4.0))
         requirementDocking = dateFormatter.string(from: now!.addingTimeInterval(week * 5.0))
         threePointReviewEnd = dateFormatter.string(from: now!.addingTimeInterval(week * 6.0))
-        
     }
     
     
     func populateEvents() -> String {
         
-        var finalText = ""
+        var finalText = "Milestones for \(epicJiraTicketNumber!):\n\n"
         let eventDictionary = [
             
             "A. Jira Epic created by Cerner PM" : startDate!,
@@ -75,21 +64,13 @@ class InfoViewController: UIViewController {
             "G. DNG requirements to be reviewed by PM, PO to link Jira, Dev Team to trace tests to requirements" : threePointReviewEnd!
         ]
         
-        let dictionaryKeys = Array(eventDictionary.keys).sorted()
-        print(dictionaryKeys)
+        let sortedKeysAndValues = eventDictionary.sorted(by: { $0.0 < $1.0 })
         
-//        for item in dictionaryKeys {
-////            finalText.append(eventDictionary.value(forKey: item)) + "\n" + item + "\n\n" )
-//            finalText.append(contentsOf: (eventDictionary.))
-////            finalText.append(event.value + "\n" + event.key + "\n\n")
-//        }
+        for (key,value) in sortedKeysAndValues {
+            finalText.append(value + "\n" + key + "\n\n")
+        }
         
-//        for event in eventDictionary {
-//            finalText.append(event.value + "\n" + event.key + "\n\n")
-//
-//        }
         return finalText
-        
     }
     
 }
