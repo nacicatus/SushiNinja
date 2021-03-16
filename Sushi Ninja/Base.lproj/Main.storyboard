@@ -102,10 +102,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eL-KO-Y7w">
-                                <rect key="frame" x="16" y="68" width="343" height="547"/>
+                                <rect key="frame" x="16" y="80" width="343" height="535"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                             </textView>
@@ -113,7 +113,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Q3-oe-2uR" firstAttribute="bottom" secondItem="5eL-KO-Y7w" secondAttribute="bottom" constant="52" id="3nS-zh-baf"/>
-                            <constraint firstItem="5eL-KO-Y7w" firstAttribute="top" secondItem="6Q3-oe-2uR" secondAttribute="top" constant="4" id="5Y1-1Q-Z8c"/>
+                            <constraint firstItem="5eL-KO-Y7w" firstAttribute="top" secondItem="6Q3-oe-2uR" secondAttribute="top" constant="16" id="5Y1-1Q-Z8c"/>
                             <constraint firstItem="5eL-KO-Y7w" firstAttribute="leading" secondItem="6Q3-oe-2uR" secondAttribute="leading" constant="16" id="IzH-M6-TvO"/>
                             <constraint firstItem="6Q3-oe-2uR" firstAttribute="trailing" secondItem="5eL-KO-Y7w" secondAttribute="trailing" constant="16" id="e0o-SW-saG"/>
                         </constraints>

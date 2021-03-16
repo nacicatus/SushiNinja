@@ -21,7 +21,7 @@ class StartViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.dateFormat = "d MMM yyyy"
+        dateFormatter.dateFormat = "MMM d, yyyy"
         self.jiraTextField.delegate = self
         startDatePicker.datePickerMode = .date
         greetingLabel.text = "If the Epic is created in Jira Align and you're ready to set reminders for milestones on the road to development"

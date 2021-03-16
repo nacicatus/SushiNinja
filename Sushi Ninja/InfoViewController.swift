@@ -9,7 +9,7 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
     
     // local variables
     var startDate: String?
@@ -23,29 +23,30 @@ class InfoViewController: UIViewController {
     
     let week : TimeInterval = 7.0 * 24.0 * 3600.0
     
+    @IBOutlet weak var infoTextBox: UITextView!
+    
     // Date Formatting
     let dateFormatter = DateFormatter()
-
     
-    @IBOutlet weak var infoTextBox: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateFormatter.dateFormat = "d MMM, yyyy"
+        dateFormatter.dateFormat = "MM-dd-yyyy"
         calculateDates()
-        let milestones = populateEventDictionary()
-        infoTextBox.text = printInfo(from: milestones)
+        let milestones = populateEvents()
+        infoTextBox.text = milestones
         
     }
     
-    func printInfo(from event: Dictionary<String?, String>) -> String {
-        var finalText = ""
-        for item in event {
-            finalText.append(contentsOf: item.key! + "\n" + item.value + "\n\n")
-        }
-        return finalText
-    }
+    //    func printInfo(from event: Dictionary<String, String>) -> String {
+    //        var finalText = ""
+    //        for item in event {
+    //            //finalText.append(contentsOf: item.key + "\n" + item.value + "\n\n")
+    //            finalText.append(item.key + "\n" + item.value + "\n\n")
+    //        }
+    //        return finalText
+    //    }
     
     
     func calculateDates() {
@@ -58,30 +59,29 @@ class InfoViewController: UIViewController {
         threePointReviewEnd = dateFormatter.string(from: now!.addingTimeInterval(week * 6.0))
         
     }
-
-    func populateEventDictionary() -> Dictionary<String?, String> {
+    
+    
+    func populateEvents() -> String {
         let eventDictionary = [
-            kickoffDate : "Cerner PM to document verbiage, UX Designer to export visuals as PDF",
-            roadToReadyEnd : "EPAM PO to breakdown stories, write Acceptance Criteria, clarify questions with PM, UXD, Tech Leads",
-            specDoneEnd : "Acceptance Criteria to be reviewed by PM, story moved to Incep Spec Done",
-            sprintStart : "EPAM Dev Team to Groom and Plan next Sprint",
-            requirementDocking : "EPAM PO to refine requirements in DNG",
-            threePointReviewEnd : "DNG requirements to be reviewed by PM, PO to link Jira, Dev Team to trace tests to requirements"
+            
+            "A. Jira Epic created by Cerner PM" : startDate!,
+            "B. Cerner PM to document verbiage, UX Designer to export visuals as PDF" : kickoffDate!,
+            "C. EPAM PO to breakdown stories, write Acceptance Criteria, clarify questions with PM, UXD, Tech Leads" : roadToReadyEnd!,
+            "D. Acceptance Criteria to be reviewed by PM, story moved to Incep Spec Done" : specDoneEnd!,
+            "E. EPAM Dev Team to Groom and Plan next Sprint": sprintStart!,
+            "F. EPAM PO to refine requirements in DNG" : requirementDocking!,
+            "G. DNG requirements to be reviewed by PM, PO to link Jira, Dev Team to trace tests to requirements" : threePointReviewEnd!
         ]
         
-        return eventDictionary
+        
+        
+        var finalText = ""
+        for event in eventDictionary {
+            finalText.append(event.value + "\n" + event.key + "\n\n")
+
+        }
+        return finalText
+        
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
