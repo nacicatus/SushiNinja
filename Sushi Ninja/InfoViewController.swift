@@ -31,12 +31,13 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Milestones for \(epicJiraTicketNumber!)"
         
         dateFormatter.dateFormat = "MMM d, yyyy"
         calculateDates()
         let milestones = populateEvents()
-        infoTextBox.text = milestones
         
+        infoTextBox.text = milestones
     }
 
     func calculateDates() {
@@ -52,16 +53,16 @@ class InfoViewController: UIViewController {
     
     func populateEvents() -> String {
         
-        var finalText = "Milestones for \(epicJiraTicketNumber!):\n\n"
+        var finalText = ""
         let eventDictionary = [
             
-            "A. Jira Epic created by Cerner PM" : startDate!,
-            "B. Cerner PM to document verbiage, UX Designer to export visuals as PDF" : kickoffDate!,
-            "C. EPAM PO to breakdown stories, write Acceptance Criteria, clarify questions with PM, UXD, Tech Leads" : roadToReadyEnd!,
-            "D. Acceptance Criteria to be reviewed by PM, story moved to Incep Spec Done" : specDoneEnd!,
-            "E. EPAM Dev Team to Groom and Plan next Sprint": sprintStart!,
-            "F. EPAM PO to refine requirements in DNG" : requirementDocking!,
-            "G. DNG requirements to be reviewed by PM, PO to link Jira, Dev Team to trace tests to requirements" : threePointReviewEnd!
+            "A Jira Epic is created by the Cerner PM" : startDate!,
+            "Cerner PM should document verbiage, UX Designer will export visuals as PDF" : kickoffDate!,
+            "EPAM BA to breakdown stories, write Acceptance Criteria, clarify questions with PM, UXD, Tech Leads" : roadToReadyEnd!,
+            "Get the Acceptance Criteria reviewed by Cerner PM and User Stories moved to Incep Spec Done" : specDoneEnd!,
+            "Help the EPAM Dev Team to Groom and Plan next Sprint": sprintStart!,
+            "Jazz(DNG) should be populated by refined requirements by EPAM BA during first half of the associated Sprint" : requirementDocking!,
+            "Must get DNG requirements reviewed by Cerner PM & Tech Lead, EPAM story owner, then add links to Jira and Tests with help of the EPAM Dev Team" : threePointReviewEnd!
         ]
         
         let sortedKeysAndValues = eventDictionary.sorted(by: { $0.0 < $1.0 })

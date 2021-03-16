@@ -27,8 +27,10 @@ class StartViewController: UIViewController, UITextFieldDelegate {
         startDatePicker.datePickerMode = .date
         greetingLabel.text = "If the Epic is created in Jira Align and you're ready to set reminders for milestones on the road to development"
         instructionLabel.text = "Pick the date the Epic was added:"
-       
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        jiraTextField.clearsOnInsertion = true
     }
     
     // select date
