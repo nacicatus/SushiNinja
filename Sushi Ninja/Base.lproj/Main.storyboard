@@ -114,6 +114,9 @@
                                 <rect key="frame" x="128.5" y="609" width="118" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Mark Calendar"/>
+                                <connections>
+                                    <action selector="markCalendar:" destination="CWb-3F-CwM" eventType="touchUpInside" id="Z8I-Ez-Cgf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
