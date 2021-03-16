@@ -10,47 +10,7 @@ import Foundation
 import EventKit
 
 class EventHelper {
-
-    var calendars : [EKCalendar]?
     
-//    func generateEvent(){
-//        let status = EKEventStore.authorizationStatus(for: .event)
-//        
-//        switch status {
-//        case EKAuthorizationStatus.notDetermined:
-//            // this happens on first run
-//            requestAccessToCalendar()
-//        case EKAuthorizationStatus.authorized:
-//            // User has access
-//            print("User has access")
-//            self.createEvent()
-//        case EKAuthorizationStatus.restricted:
-//            // Ask permission
-//            askPermission()
-//        default:
-//            break
-//        }
-//    }
-    
-    func askPermission(){
-        print("User has to change settings")
-        // create an Alert
-    }
-    
-    //    func requestAccessToCalendar() {
-    //        appleEventStore.requestAccess(to: .event, completion: { (granted, error ) in
-    //            if (granted) && (error == nil) {
-    //                DispatchQueue.main.async {
-    //                    print("User has access to calendar")
-    //                    self.createEvent()
-    //                }
-    //            } else {
-    //                DispatchQueue.main.async {
-    //                    self.askPermission()
-    //                }
-    //            }
-    //        })
-    //    }
     
     func createEvent(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         
@@ -75,7 +35,7 @@ class EventHelper {
             } else {
                 completion?(false, error as NSError?)
             }
-            })
+        })
     }
     
 }
