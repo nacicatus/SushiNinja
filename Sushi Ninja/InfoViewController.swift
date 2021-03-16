@@ -101,6 +101,14 @@ class InfoViewController: UIViewController {
         helper.createEvent(title: "\(epicJiraTicketNumber!) Dock Requirements", description: "Jazz(DNG) should be populated by refined requirements by EPAM BA during first half of the associated Sprint", startDate: groomPlan!, endDate: dockReq!, completion: nil)
         helper.createEvent(title: "\(epicJiraTicketNumber!) 3 Point Review", description: "Must get DNG requirements reviewed by Cerner PM & Tech Lead, EPAM story owner, then add links to Jira and Tests with help of the EPAM Dev Team", startDate: dockReq!, endDate: threep!, completion: nil)
         
+        // show Alert after dates were added
+        let alert = UIAlertController(title: "Calendar Populated", message: "All milestone dates for \(epicJiraTicketNumber!) have been added to your default Calendar with alerts set for one day in advance.", preferredStyle: .alert)
+        
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alert.addAction(okayAction)
+        present(alert, animated: true, completion: nil)
+        
+        
     }
     
     
