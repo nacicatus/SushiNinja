@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKk-Qk-x0h">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,40 +10,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Start View Controller-->
+        <!--Sushi Ninja-->
         <scene sceneID="cfU-fm-fJk">
             <objects>
                 <viewController id="f4T-oI-atX" customClass="StartViewController" customModule="Sushi_Ninja" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yVH-7Z-NPS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0k-da-Tiw">
-                                <rect key="frame" x="16" y="80" width="343" height="58"/>
+                                <rect key="frame" x="16" y="80" width="288" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="7zq-lI-kAS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the Epic's Jira ticket ID, e.g. XYZ-1234" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-E6-0Fh">
-                                <rect key="frame" x="16" y="146" width="343" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the Epic's Jira ticket ID, e.g. XYZ-1234" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-E6-0Fh">
+                                <rect key="frame" x="16" y="146" width="288" height="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMp-7e-104">
-                                <rect key="frame" x="16" y="184" width="343" height="53"/>
+                                <rect key="frame" x="16" y="184" width="288" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="fW7-08-Anh"/>
+                                    <constraint firstAttribute="height" constant="37" id="fW7-08-Anh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="z6C-HD-y2d">
-                                <rect key="frame" x="16" y="253" width="343" height="216"/>
+                                <rect key="frame" x="4" y="225" width="312" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="637535567.092327">
                                     <!--2021-03-15 21:12:47 +0000-->
                                 </date>
@@ -52,7 +52,7 @@
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmJ-1e-nAl">
-                                <rect key="frame" x="131" y="493" width="115" height="34"/>
+                                <rect key="frame" x="103.5" y="449" width="115" height="34"/>
                                 <state key="normal" title="Get the dates!">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -65,23 +65,23 @@
                         <constraints>
                             <constraint firstItem="Y0k-da-Tiw" firstAttribute="leading" secondItem="6tH-JY-UmX" secondAttribute="leading" constant="16" id="6t1-mZ-In7"/>
                             <constraint firstItem="hmJ-1e-nAl" firstAttribute="centerX" secondItem="6tH-JY-UmX" secondAttribute="centerX" constant="1" id="AZB-rX-uk3"/>
-                            <constraint firstItem="hmJ-1e-nAl" firstAttribute="top" secondItem="z6C-HD-y2d" secondAttribute="bottom" constant="24" id="CSj-jB-2NW"/>
+                            <constraint firstItem="hmJ-1e-nAl" firstAttribute="top" secondItem="z6C-HD-y2d" secondAttribute="bottom" constant="8" id="CSj-jB-2NW"/>
                             <constraint firstItem="Y0k-da-Tiw" firstAttribute="top" secondItem="6tH-JY-UmX" secondAttribute="top" constant="16" id="HmK-kB-JgV"/>
                             <constraint firstItem="6tH-JY-UmX" firstAttribute="trailing" secondItem="Y0k-da-Tiw" secondAttribute="trailing" constant="16" id="RS8-WV-6j2"/>
                             <constraint firstItem="z6C-HD-y2d" firstAttribute="centerX" secondItem="6tH-JY-UmX" secondAttribute="centerX" id="Sr7-O0-8LS"/>
-                            <constraint firstItem="z6C-HD-y2d" firstAttribute="top" secondItem="VMp-7e-104" secondAttribute="bottom" constant="16" id="ULT-ep-ey3"/>
+                            <constraint firstItem="z6C-HD-y2d" firstAttribute="top" secondItem="VMp-7e-104" secondAttribute="bottom" constant="4" id="ULT-ep-ey3"/>
                             <constraint firstItem="4hF-E6-0Fh" firstAttribute="top" secondItem="Y0k-da-Tiw" secondAttribute="bottom" constant="8" id="Vse-me-28f"/>
-                            <constraint firstItem="z6C-HD-y2d" firstAttribute="leading" secondItem="6tH-JY-UmX" secondAttribute="leading" constant="16" id="bgH-7K-SXn"/>
+                            <constraint firstItem="z6C-HD-y2d" firstAttribute="leading" secondItem="6tH-JY-UmX" secondAttribute="leading" constant="4" id="bgH-7K-SXn"/>
                             <constraint firstItem="6tH-JY-UmX" firstAttribute="trailing" secondItem="4hF-E6-0Fh" secondAttribute="trailing" constant="16" id="c31-bZ-VE2"/>
                             <constraint firstItem="VMp-7e-104" firstAttribute="leading" secondItem="6tH-JY-UmX" secondAttribute="leading" constant="16" id="dqg-uy-jW7"/>
-                            <constraint firstItem="6tH-JY-UmX" firstAttribute="trailing" secondItem="z6C-HD-y2d" secondAttribute="trailing" constant="16" id="iD8-Na-TVO"/>
+                            <constraint firstItem="6tH-JY-UmX" firstAttribute="trailing" secondItem="z6C-HD-y2d" secondAttribute="trailing" constant="4" id="iD8-Na-TVO"/>
                             <constraint firstItem="4hF-E6-0Fh" firstAttribute="leading" secondItem="6tH-JY-UmX" secondAttribute="leading" constant="16" id="kp8-BO-fdn"/>
                             <constraint firstItem="6tH-JY-UmX" firstAttribute="trailing" secondItem="VMp-7e-104" secondAttribute="trailing" constant="16" id="lV0-yT-8Vb"/>
                             <constraint firstItem="VMp-7e-104" firstAttribute="top" secondItem="4hF-E6-0Fh" secondAttribute="bottom" constant="8" id="xKX-Tn-GQD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6tH-JY-UmX"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZSP-e6-2x7"/>
+                    <navigationItem key="navigationItem" title="Sushi Ninja" id="ZSP-e6-2x7"/>
                     <connections>
                         <outlet property="greetingLabel" destination="Y0k-da-Tiw" id="HIe-vG-T73"/>
                         <outlet property="instructionLabel" destination="VMp-7e-104" id="Zru-6W-qID"/>
@@ -91,18 +91,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXX-oX-DQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="-127"/>
+            <point key="canvasLocation" x="2032.8" y="-127.28635682158921"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="IoU-sJ-BYl">
             <objects>
                 <viewController id="CWb-3F-CwM" customClass="InfoViewController" customModule="Sushi_Ninja" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gTu-7j-hOY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eL-KO-Y7w">
-                                <rect key="frame" x="0.0" y="64" width="375" height="537"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="438"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -111,7 +111,7 @@
                                 <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfz-OL-sv7">
-                                <rect key="frame" x="128.5" y="609" width="118" height="34"/>
+                                <rect key="frame" x="101" y="510" width="118" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Mark Calendar"/>
                                 <connections>
@@ -144,7 +144,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RKk-Qk-x0h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x1W-hS-pqS">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

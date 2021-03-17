@@ -26,7 +26,6 @@ class EventHelper {
                 
                 do {
                     try appleEventStore.save(event, span: .thisEvent)
-                    print("events added with dates:")
                 } catch let e as NSError {
                     completion?(false, e)
                     return

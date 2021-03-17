@@ -33,6 +33,10 @@ class StartViewController: UIViewController, UITextFieldDelegate {
         jiraTextField.clearsOnInsertion = true
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     // select date
     @IBAction func selectDate(_ sender: UIDatePicker) {
         jiraAlignEpicAddedDate = dateFormatter.string(from: sender.date)
@@ -48,7 +52,12 @@ class StartViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let infoVC = segue.destination as? InfoViewController else { return }
         infoVC.epicJiraTicketNumber = jiraTextField.text
-        infoVC.startDate = jiraAlignEpicAddedDate
+        if let selectedDate = jiraAlignEpicAddedDate {
+            infoVC.startDate = selectedDate
+        } else {
+            infoVC.startDate = dateFormatter.string(from: startDatePicker.date)
+        }
+        
     }
 }
 
